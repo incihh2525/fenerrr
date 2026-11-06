@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bir sualım var 💛💙</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    background:
+    linear-gradient(rgba(3,12,40,.78),rgba(3,12,40,.88)),
+    url("https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=1200");
+    background-size: cover;
+    background-position: center;
+}
+
+.card {
+    background: rgba(4,20,55,.95);
+    border: 3px solid #ffda25;
+    border-radius: 25px;
+    padding: 35px 20px;
+    width: 90%;
+    max-width: 420px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 0 35px #ffda2580;
+}
+
+.logo { font-size: 65px; }
+
+h1 { color: #ffda25; }
+
+p {
+    font-size: 19px;
+    line-height: 1.5;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 35px;
+    min-height: 60px;
+}
+
+button {
+    border: none;
+    border-radius: 30px;
+    padding: 15px 30px;
+    font-size: 19px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#yes {
+    background: #ffda25;
+    color: #061b45;
+    position: relative;
+}
+
+#no {
+    background: #123c80;
+    color: white;
+    border: 2px solid #ffda25;
+}
+
+#result {
+    display: none;
+    color: #ffda25;
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 25px;
+    line-height: 1.5;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <div class="logo">💛💙⚽</div>
+
+    <h1>Bir sualım var...</h1>
+
+    <p>
+      Mənimlə əlaqəni kəsmək istəyirsən?
+      <br><br>
+      Cavabını diqqətlə seç. 😏
+    </p>
+
+    <div class="buttons">
+        <button id="yes">HƏ 🙄</button>
+        <button id="no" onclick="sayNo()">YOX 💛</button>
+    </div>
+
+    <div id="result">
+        DÜZGÜN CAVAB! 😂💛💙
+        <br><br>
+        Fenerbahçe bu qərarı təsdiqlədi!
+        <br>
+        Əlaqəni kəsmək VAR-dan qayıtdı! ⚽
+    </div>
+</div>
+
+<script>
+const yes = document.getElementById("yes");
+
+function runAway() {
+    const x = Math.random() * 250 - 125;
+    const y = Math.random() * 180 - 90;
+
+    yes.style.transform = `translate(${x}px, ${y}px)`;
+}
+
+yes.addEventListener("mouseenter", runAway);
+yes.addEventListener("touchstart", function(e) {
+    e.preventDefault();
+    runAway();
+});
+
+yes.addEventListener("click", function(e) {
+    e.preventDefault();
+    runAway();
+});
+
+function sayNo() {
+    document.getElementById("result").style.display = "block";
+    document.querySelector("p").innerHTML =
+        "Sənin bu cavabınla fəxr edirik! 😂";
+}
+</script>
+
+</body>
+</html>
